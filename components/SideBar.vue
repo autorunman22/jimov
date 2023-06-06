@@ -8,7 +8,12 @@ nav.sidebar.w-64.fixed.min-h-screen.bg-slate-800
             ul.text-white.mt-36.text-center
                 li(v-for="i in links" :key="i.name" :class="{'text-green-500': activeSection === i.link}").mt-5
                     a(:href="i.link" @click.prevent.stop="onNav(i.link)").text-lg.hover_text-green-500.transition {{ i.name }}
-        div
+        .pb-6
+            .flex.items-center.space-x-3
+                NuxtLink(to="https://www.facebook.com/h4ck3r22b")
+                    img(src="/fb.png").w-6.h-6
+                NuxtLink(to="https://play.google.com/store/apps/dev?id=5623979583961178976")
+                    img(src="/google-play.svg").w-6.h-6
 </template>
 
 <script setup>
