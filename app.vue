@@ -1,5 +1,3 @@
-<template>
-  <div>
-    <div class="text-red-500 hover_text-green-300">wow</div>
-  </div>
+<template lang="pug">
+div.bg-pink-700 so this is pink
 </template>
