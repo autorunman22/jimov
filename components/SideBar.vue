@@ -1,9 +1,9 @@
 <template lang="pug">
-nav.sidebar.w-64.fixed.min-h-screen.bg-slate-800
+nav.sidebar.w-64.fixed.min-h-screen.bg-slate-800.hidden.lg_block
     .flex.flex-col.items-center.min-h-screen.space-y-2.justify-between
         div
             img(src='/avatar.jpeg' class="w-48").h-48.object-cover.rounded-full.border-4.mt-10.border-green-500
-            h1.mt-2.text-white.font-bold.text-3xl Jim Ovejera
+            h1.mt-2.text-white.font-bold.text-3xl.text-center Jim Ovejera
         div.grow
             ul.text-white.mt-36.text-center
                 li(v-for="i in links" :key="i.name" :class="{'text-green-500': activeSection === i.link}").mt-5

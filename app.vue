@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   side-bar
-  main.pl-64
+  main.pl-0.lg_pl-64
     .px-4
       home-section#home
       about-section#about-me
