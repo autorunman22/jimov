@@ -5,9 +5,9 @@ nav.sidebar.w-64.fixed.min-h-screen.bg-slate-800
             img(src='/avatar.jpeg' class="w-48").h-48.object-cover.rounded-full.border-4.mt-10.border-green-500
             h1.mt-2.text-white.font-bold.text-3xl Jim Ovejera
         div.grow
-            ul.text-white.mt-20.text-center
-                li(v-for="i in links" :key="i").mt-4
-                    a(href='#').text-lg {{ i }}
+            ul.text-white.mt-36.text-center
+                li(v-for="i in links" :key="i").mt-5
+                    a(href='#').text-lg.hover_text-green-500.transition {{ i }}
         div
 </template>
 
