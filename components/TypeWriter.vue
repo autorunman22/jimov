@@ -1,16 +1,14 @@
 <template>
 <h1>
-    Hi, I'm a
     <span class="typed-text">{{ typeValue }}</span>
     <span class="blinking-cursor">|</span>
-    <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
 </h1>
 </template>
 
 <script setup>
 const typeValue = ref("")
 const typeStatus = ref(false)
-const displayTextArray = ref(["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"])
+const displayTextArray = ref(["I'm a Freelancer", "I'm an Web Developer", "I'm an Android Developer"])
 const typingSpeed = ref(100)
 const erasingSpeed = ref(100)
 const newTextDelay = ref(2000)
