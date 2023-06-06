@@ -6,11 +6,24 @@ nav.sidebar.w-64.fixed.min-h-screen.bg-slate-800
             h1.mt-2.text-white.font-bold.text-3xl Jim Ovejera
         div.grow
             ul.text-white.mt-36.text-center
-                li(v-for="i in links" :key="i").mt-5
-                    a(href='#').text-lg.hover_text-green-500.transition {{ i }}
+                li(v-for="i in links" :key="i.name").mt-5
+                    a(:href="i.link" @click.prevent.stop="onNav(i.link)").text-lg.hover_text-green-500.transition {{ i.name }}
         div
 </template>
 
 <script setup>
-const links = ref(['Home', 'About Me', 'What I Do', 'Portfolio', 'Testimonials', 'Contact'])
+const links = ref([
+    { name: 'Home', link: '#home'}, 
+    { name: 'About Me', link: '#about-me'}, 
+    { name: 'What I Do', link: '#what-i-do'}, 
+    { name: 'Portfolio', link: '#portfolio'}, 
+    { name: 'Testimonials', link: '#testimonials'}, 
+    { name: 'Contact', link: '#contact'}
+])
+
+const onNav = (page) => {
+    document.querySelector(page).scrollIntoView({
+        behavior: 'smooth'
+    })
+}
 </script>
