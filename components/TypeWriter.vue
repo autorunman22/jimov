@@ -1,14 +1,14 @@
 <template>
 <h1>
-    <span class="typed-text">{{ typeValue }}</span>
-    <span class="blinking-cursor">|</span>
+    <span class="typed-text text-5xl text-green-500 font-bold">{{ typeValue }}</span>
+    <span class="blinking-cursor text-5xl text-red-500 font-bold">|</span>
 </h1>
 </template>
 
 <script setup>
 const typeValue = ref("")
 const typeStatus = ref(false)
-const displayTextArray = ref(["I'm a Freelancer", "I'm an Web Developer", "I'm an Android Developer"])
+const displayTextArray = ref(["I'm Jim Ovejera.", "I'm a Freelancer.", "I'm a Web Developer.", "I'm an Android Developer."])
 const typingSpeed = ref(100)
 const erasingSpeed = ref(100)
 const newTextDelay = ref(2000)
@@ -43,7 +43,7 @@ const eraseText = () => {
         displayTextArrayIndex.value += 1;
         if (displayTextArrayIndex.value >= displayTextArray.value.length)
             displayTextArrayIndex.value = 0;
-        setTimeout(typeText(), typingSpeed.value + 1000);
+        setTimeout(typeText, typingSpeed.value + 1000);
     }
 }
 
@@ -53,17 +53,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
- .container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .blinking-cursor {
-    font-size: 6rem;
-    color: #2c3e50;
     -webkit-animation: 1s blink step-end infinite;
     -moz-animation: 1s blink step-end infinite;
     -ms-animation: 1s blink step-end infinite;
@@ -74,30 +64,30 @@ onMounted(() => {
 @keyframes blink {
     from,
     to { color: transparent; }
-    50% { color: #2c3e50; }
+    50% { color: white; }
 }
 
 @-moz-keyframes blink {
     from,
     to { color: transparent; }
-    50% { color: #2c3e50; }
+    50% { color: white; }
 }
 
 @-webkit-keyframes blink {
     from,
     to { color: transparent; }
-    50% { color: #2c3e50; }
+    50% { color: white; }
 }
 
 @-ms-keyframes blink {
     from,
     to { color: transparent; }
-    50% { color: #2c3e50; }
+    50% { color: white; }
 }
 
 @-o-keyframes blink {
     from,
     to { color: transparent; }
-    50% { color: #2c3e50; }
+    50% { color: white; }
 }
 </style>
