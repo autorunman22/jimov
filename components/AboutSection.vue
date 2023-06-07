@@ -23,5 +23,14 @@ div.min-h-screen
                 span.font-bold From:
                 span.shrink-0 Manila City, Philippines
             a(href="/").block.mt-12.border-2.border-green-500.rounded-full.px-10.py-4.text-white.font-bold.transition-all.hover_bg-green-700.bg-green-500.text-center.shadow-lg Download Resume
-            
+    .flex.items-center.justify-center.mt-20.text-center.text-slate-700
+        div.px-10.bg-red-500s
+            span.font-bold.text-4xl 10+
+            div.text-2xl Years Experience
+        div.px-10.border-x
+            span.font-bold.text-4xl 50+
+            div.text-2xl Happy Clients
+        div.px-10.bg-red-500s
+            span.font-bold.text-4xl 200+
+            div.text-2xl Projects Done
 </template>
