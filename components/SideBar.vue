@@ -45,7 +45,7 @@ onMounted(() => {
             const { target, isIntersecting } = entry
 
             if (isIntersecting) {
-                console.log(`el`, target.id);
+                activeSection.value = `#${target.id}`
             }
         })
     }, { threshold: 0.5 });
