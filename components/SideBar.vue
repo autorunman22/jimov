@@ -20,13 +20,13 @@ nav.sidebar.w-64.fixed.min-h-screen.bg-slate-800.hidden.lg_block
 const activeSection = ref("#home")
 
 const links = ref([
-    { name: 'Home', link: '#home'}, 
-    { name: 'About Me', link: '#about-me'}, 
-    { name: 'What I Do', link: '#what-i-do'}, 
+    { name: 'Home', link: '#home' },
+    { name: 'About Me', link: '#about-me' },
+    { name: 'What I Do', link: '#what-i-do' },
     { name: 'Resume', link: '#resume' },
     { name: 'Portfolio', link: '#portfolio' },
-    { name: 'Testimonials', link: '#testimonials'}, 
-    { name: 'Contact', link: '#contact'}
+    { name: 'Testimonials', link: '#testimonials' },
+    { name: 'Contact', link: '#contact' }
 ])
 
 const onNav = (page) => {
@@ -36,4 +36,25 @@ const onNav = (page) => {
         behavior: 'smooth'
     })
 }
+
+var observer = null
+
+onMounted(() => {
+    observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+            const { target, isIntersecting } = entry
+
+            if (isIntersecting) {
+                console.log(`el`, target.id);
+            }
+        })
+    }, { threshold: 0.5 });
+
+    const sections = document.querySelectorAll(links.value.map(e => e.link))
+    sections.forEach((s) => observer.observe(s))
+})
+
+onBeforeUnmount(() => {
+    observer.disconnect()
+})
 </script>
