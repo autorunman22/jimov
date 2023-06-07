@@ -23,6 +23,7 @@ const links = ref([
     { name: 'Home', link: '#home' },
     { name: 'About Me', link: '#about-me' },
     { name: 'What I Do', link: '#what-i-do' },
+    { name: 'Resume', link: '#resume' },
     { name: 'Portfolio', link: '#portfolio' },
     { name: 'Testimonials', link: '#testimonials' },
     { name: 'Contact', link: '#contact' }

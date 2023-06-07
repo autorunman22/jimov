@@ -5,7 +5,7 @@ nav.sidebar.w-64.fixed.min-h-screen.bg-slate-800.hidden.lg_block
             img(src='/avatar.jpeg' class="w-48").h-48.object-cover.rounded-full.border-4.mt-10.border-green-500
             h1.mt-2.text-white.font-bold.text-3xl.text-center Jim Ovejera
         div.grow
-            ul.text-white.mt-36.text-center
+            ul.text-white.mt-28.text-center
                 li(v-for="i in links" :key="i.name" :class="{'text-green-500': activeSection === i.link}").mt-5
                     a(:href="i.link" @click.prevent.stop="onNav(i.link)").text-lg.hover_text-green-500.transition {{ i.name }}
         .pb-6
@@ -23,7 +23,8 @@ const links = ref([
     { name: 'Home', link: '#home'}, 
     { name: 'About Me', link: '#about-me'}, 
     { name: 'What I Do', link: '#what-i-do'}, 
-    { name: 'Portfolio', link: '#portfolio'}, 
+    { name: 'Resume', link: '#resume' },
+    { name: 'Portfolio', link: '#portfolio' },
     { name: 'Testimonials', link: '#testimonials'}, 
     { name: 'Contact', link: '#contact'}
 ])

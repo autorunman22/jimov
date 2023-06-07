@@ -1,3 +1,4 @@
 <template lang="pug">
-div.min-h-screen this is contact section
+div.min-h-screen
+    section-header(bg-text="CONTACT") Get in Touch
 </template>
