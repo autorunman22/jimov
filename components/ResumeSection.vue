@@ -36,28 +36,22 @@ div
                 h1.font-bold.text-3xl.mb-8 My Skills
                 div
                     .flex.items-center.justify-between
-                        span HTML/CSS
-                        span 67%
+                        span Nuxt.js
+                        span 90%
                     .bg-gray-200.rounded-full.overflow-hidden.mt-2
-                        .h-4.bg-green-500(style="width: 99%")
+                        .h-4.bg-green-500(style="width: 90%")
                 div.mt-6
                     .flex.items-center.justify-between
                         span Vue.js
-                        span 99%
+                        span 80%
                     .bg-gray-200.rounded-full.overflow-hidden.mt-2
-                        .h-4.bg-green-500(style="width: 99%")
+                        .h-4.bg-green-500(style="width: 80%")
                 div.mt-6
                     .flex.items-center.justify-between
-                        span Nuxt.js
-                        span 99%
+                        span HTML/CSS
+                        span 98%
                     .bg-gray-200.rounded-full.overflow-hidden.mt-2
-                        .h-4.bg-green-500(style="width: 99%")
-                div.mt-6
-                    .flex.items-center.justify-between
-                        span Kotlin/Android
-                        span 99%
-                    .bg-gray-200.rounded-full.overflow-hidden.mt-2
-                        .h-4.bg-green-500(style="width: 99%")
+                        .h-4.bg-green-500(style="width: 98%")
                 div.mt-6
                     .flex.items-center.justify-between
                         span Web Design
@@ -66,32 +60,38 @@ div
                         .h-4.bg-green-500(style="width: 99%")
                 div.mt-6
                     .flex.items-center.justify-between
-                        span Meta Ads
-                        span 99%
+                        span Kotlin/Android
+                        span 90%
                     .bg-gray-200.rounded-full.overflow-hidden.mt-2
-                        .h-4.bg-green-500(style="width: 99%")
+                        .h-4.bg-green-500(style="width: 90%")
+                div.mt-6
+                    .flex.items-center.justify-between
+                        span Meta Ads
+                        span 80%
+                    .bg-gray-200.rounded-full.overflow-hidden.mt-2
+                        .h-4.bg-green-500(style="width: 80%")
                 div.mt-6
                     .flex.items-center.justify-between
                         span DevOps
-                        span 99%
+                        span 50%
                     .bg-gray-200.rounded-full.overflow-hidden.mt-2
-                        .h-4.bg-green-500(style="width: 99%")
+                        .h-4.bg-green-500(style="width: 50%")
                 div.mt-6
                     .flex.items-center.justify-between
                         span MongoDB
-                        span 99%
+                        span 60%
                     .bg-gray-200.rounded-full.overflow-hidden.mt-2
-                        .h-4.bg-green-500(style="width: 99%")
+                        .h-4.bg-green-500(style="width: 60%")
                 div.mt-6
                     .flex.items-center.justify-between
                         span MySQL
-                        span 99%
+                        span 60%
                     .bg-gray-200.rounded-full.overflow-hidden.mt-2
-                        .h-4.bg-green-500(style="width: 99%")
+                        .h-4.bg-green-500(style="width: 60%")
                 div.mt-6
                     .flex.items-center.justify-between
                         span Firebase
-                        span 99%
+                        span 60%
                     .bg-gray-200.rounded-full.overflow-hidden.mt-2
-                        .h-4.bg-green-500(style="width: 99%")
+                        .h-4.bg-green-500(style="width: 60%")
 </template>
