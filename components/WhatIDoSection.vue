@@ -1,6 +1,6 @@
 <template lang="pug">
-div.min-h-screen
-    section-header(bg-text="SERVICES") What I Do?
+div.min-h-screen.bg-gray-50.mt-10
+    section-header(bg-text="SERVICES").z-10 What I Do?
     .grid.grid-cols-1.xl_grid-cols-2.gap-12.text-center.px-4.lg_px-36.text-slate-700.text-justify
         div
             .flex.space-x-6
