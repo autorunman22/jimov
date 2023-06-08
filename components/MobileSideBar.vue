@@ -1,5 +1,5 @@
 <template lang="pug">
-nav.bg-slate-800.text-white.lg_hidden.fixed.w-full.top-0
+nav.bg-slate-800.text-white.lg_hidden.fixed.w-full.top-0.z-20
     .flex.items-center.justify-between.py-2.px-4
         h1.font-bold.text-2xl.text-center Jim Ovejera
         div
