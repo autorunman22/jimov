@@ -4,15 +4,15 @@ div.min-h-screen
     .max-w-7xl.mx-auto.px-4
         Carousel(:items-to-show="2" :autoplay="4000" :pauseAutoplayOnHover="true")
             slide(v-for="(i, index) in testimonials" :key="index")
-                div
-                    .flex
+                div.shadow-xl.rounded-md.border.px-12.py-8.mb-10
+                    .flex.space-x-4
                         img(:src='i.img').rounded-full.w-20.h-20.object-cover
                         div
                             h1 {{ i.name }}
                             span {{ i.position }}
-                    p {{ i.desc }}
-                    .flex
-                        img(v-for="star in i.stars" src='/icons/star.png').w-8
+                    p.mt-4 "{{ i.desc }}"
+                    .flex.mt-6
+                        img(v-for="star in i.stars" :key="star" src='/icons/star.png').w-6
             template(v-slot:addons)
                 //- navigation
                 pagination
