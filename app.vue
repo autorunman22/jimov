@@ -12,3 +12,9 @@ div
       testimonials-section#testimonials.pt-12.lg_pt-0
       contact-section#contact.pt-12.lg_pt-0
 </template>
+
+<script setup>
+useHead({
+  title: 'Jim Ovejera - Personal Portfolio'
+})
+</script>
