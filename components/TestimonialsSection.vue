@@ -2,7 +2,21 @@
 div.min-h-screen
     section-header(bg-text="TESTIMONIALS") Clients Speak
     .max-w-7xl.mx-auto.px-4
-        Carousel(:items-to-show="2" :autoplay="4000" :pauseAutoplayOnHover="true")
+        Carousel(:items-to-show="1" :autoplay="4000" :pauseAutoplayOnHover="true").lg_hidden
+            slide(v-for="(i, index) in testimonials" :key="index")
+                div.shadow-xl.rounded-md.border.px-12.py-8.mb-10.mx-4
+                    .flex.space-x-4
+                        img(:src='i.img').rounded-full.w-20.h-20.object-cover
+                        div.text-left
+                            h1.text-2xl.font-bold {{ i.name }}
+                            span {{ i.position }}
+                    p.mt-4.text-left “{{ i.desc }}”
+                    .flex.mt-6.justify-end
+                        img(v-for="star in i.stars" :key="star" src='/icons/star.png').w-6
+            template(v-slot:addons)
+                //- navigation
+                pagination
+        Carousel(:items-to-show="2" :autoplay="4000" :pauseAutoplayOnHover="true").hidden.lg_block
             slide(v-for="(i, index) in testimonials" :key="index")
                 div.shadow-xl.rounded-md.border.px-12.py-8.mb-10.mx-4
                     .flex.space-x-4
