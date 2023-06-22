@@ -48,15 +48,24 @@ const onSubmit = async () => {
             email: 'ovejera.jimpaulo@gmail.com',
         },
     ]
-    await tranEmailApi
-        .sendTransacEmail({
-            sender,
-            to: receivers,
-            subject: 'Jim Ovejera - Portfolio',
-            htmlContent: comment.value,
-            params: {
-                role: 'Frontend',
-            },
-        })
+
+    try {
+        await tranEmailApi
+            .sendTransacEmail({
+                sender,
+                to: receivers,
+                subject: 'Jim Ovejera - Portfolio',
+                htmlContent: comment.value,
+                params: {
+                    role: 'Frontend',
+                },
+            })
+        alert('You have successfully sent this message to him. Thank you.')
+        email.value = ''
+        name.value = ''
+        comment.value = ''
+    } catch (e) {
+        alert('Something went wrong')
+    }
 }
 </script>
