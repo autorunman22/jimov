@@ -12,5 +12,10 @@ export default defineNuxtConfig({
         prefetch: true,
         preconnect: true,
         preload: true
-    }
+    },
+    runtimeConfig: {
+        public: {
+            smtpKey: process.env.SENDINBLUE_KEY
+        }
+    },
 })
