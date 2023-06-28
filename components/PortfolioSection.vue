@@ -7,7 +7,9 @@ div.min-h-screen
             .relative.justify-center.text-slate-500.menu-parent
                 button(v-for="i in tabs" :key="i" @click="onSelectTab(i)" :class="{'active': activeTab === i}" :id="i").text-xl.mx-2.font-semibold.transition-all {{ i }}
                 .absolute.h-1.rounded-full.w-20.bg-green-500.transition-all(class="-bottom-3").indicator
-    button(@click="modal.openModal()") show
+    //- button(@click="modal.openModal()") show
+    .max-w-7xl.mx-auto.px-4.text-slate-700
+        portfolio-android
 </template>
 
 <script setup>
