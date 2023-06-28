@@ -17,7 +17,7 @@ const androids = [
         url: 'https://play.google.com/store/apps/details?id=com.lto.exam.reviewer',
         desc: 'LTO Exam Reviewer app is designed to help users prepare and pass their application for driver license exam',
         icon: 'https://play-lh.googleusercontent.com/wsZHZxqBfRRURN6Kl_Y2NQZDA14l3NQw4nOJ1-DwvWEJ4yGWMhAiQru3mUG0piHCkg=s512-rw',
-        tags: ['kotlin', 'xml', 'motion-layout']
+        tags: ['java', 'xml', 'motion-layout']
     },
     {
         name: 'LET Reviewer: myLET',
@@ -27,32 +27,18 @@ const androids = [
         tags: ['kotlin', 'jetpack', 'compose', 'coroutine']
     },
     {
-        name: 'LTO Reviewer: 2023',
-        url: 'https://play.google.com/store/apps/details?id=com.lto.exam.reviewer',
-        desc: 'LTO Exam Reviewer app is designed to help users prepare and pass their application for driver license exam ',
-        icon: 'https://play-lh.googleusercontent.com/wsZHZxqBfRRURN6Kl_Y2NQZDA14l3NQw4nOJ1-DwvWEJ4yGWMhAiQru3mUG0piHCkg=s512-rw',
+        name: 'RecipeHub.PH: Filipino foods',
+        url: 'https://play.google.com/store/apps/details?id=com.filipino.foods',
+        desc: 'Looking for a Filipino foods for chicken? Look no more. The newest app for guiding Filipino mom\'s',
+        icon: 'https://play-lh.googleusercontent.com/KsW8zHF1XAEN_76mnlpvlXl3-UpQjxonTMD8jihNdLpUTTY0ptG2YOdIv-1p9CczhFQ=w480-h960-rw',
         tags: ['kotlin', 'xml', 'motion-layout']
     },
     {
-        name: 'LTO Reviewer: 2023',
-        url: 'https://play.google.com/store/apps/details?id=com.lto.exam.reviewer',
-        desc: 'LTO Exam Reviewer app is designed to help users prepare and pass their application for driver license exam ',
-        icon: 'https://play-lh.googleusercontent.com/wsZHZxqBfRRURN6Kl_Y2NQZDA14l3NQw4nOJ1-DwvWEJ4yGWMhAiQru3mUG0piHCkg=s512-rw',
-        tags: ['kotlin', 'xml', 'motion-layout']
-    },
-    {
-        name: 'LTO Reviewer: 2023',
-        url: 'https://play.google.com/store/apps/details?id=com.lto.exam.reviewer',
-        desc: 'LTO Exam Reviewer app is designed to help users prepare and pass their application for driver license exam ',
-        icon: 'https://play-lh.googleusercontent.com/wsZHZxqBfRRURN6Kl_Y2NQZDA14l3NQw4nOJ1-DwvWEJ4yGWMhAiQru3mUG0piHCkg=s512-rw',
-        tags: ['kotlin', 'xml', 'motion-layout']
-    },
-    {
-        name: 'LTO Reviewer: 2023',
-        url: 'https://play.google.com/store/apps/details?id=com.lto.exam.reviewer',
-        desc: 'LTO Exam Reviewer app is designed to help users prepare and pass their application for driver license exam ',
-        icon: 'https://play-lh.googleusercontent.com/wsZHZxqBfRRURN6Kl_Y2NQZDA14l3NQw4nOJ1-DwvWEJ4yGWMhAiQru3mUG0piHCkg=s512-rw',
-        tags: ['kotlin', 'xml', 'motion-layout']
+        name: 'DailyCar: Auto maintenance',
+        url: 'https://play.google.com/store/apps/details?id=com.daily.car',
+        desc: 'Taking care of your car should be simpler and straight to the point. This car maintenance is for tracking mileage, expenses, car pms, and more!!',
+        icon: 'https://play-lh.googleusercontent.com/1dfawgm3A1iiayEfRFEr0CnZlB4Yo8WKK_RvB_W8h0G8EcnY8oSvMBr7BZooEHcR5kUt=w480-h960-rw',
+        tags: ['kotlin', 'mvi', 'jetpack']
     },
 ]
 </script>
