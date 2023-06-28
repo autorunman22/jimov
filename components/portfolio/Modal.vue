@@ -32,7 +32,12 @@ const isOpen = ref(true)
 function closeModal() {
     isOpen.value = false
 }
-function openModal() {
+
+const openModal = () => {
     isOpen.value = true
 }
+
+defineExpose({
+    openModal
+})
 </script>
