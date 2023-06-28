@@ -15,16 +15,16 @@ const androids = [
     {
         name: 'LTO Reviewer: 2023',
         url: 'https://play.google.com/store/apps/details?id=com.lto.exam.reviewer',
-        desc: 'LTO Exam Reviewer app is designed to help users prepare and pass their application for driver license exam ',
+        desc: 'LTO Exam Reviewer app is designed to help users prepare and pass their application for driver license exam',
         icon: 'https://play-lh.googleusercontent.com/wsZHZxqBfRRURN6Kl_Y2NQZDA14l3NQw4nOJ1-DwvWEJ4yGWMhAiQru3mUG0piHCkg=s512-rw',
         tags: ['kotlin', 'xml', 'motion-layout']
     },
     {
-        name: 'LTO Reviewer: 2023',
-        url: 'https://play.google.com/store/apps/details?id=com.lto.exam.reviewer',
-        desc: 'LTO Exam Reviewer app is designed to help users prepare and pass their application for driver license exam ',
-        icon: 'https://play-lh.googleusercontent.com/wsZHZxqBfRRURN6Kl_Y2NQZDA14l3NQw4nOJ1-DwvWEJ4yGWMhAiQru3mUG0piHCkg=s512-rw',
-        tags: ['kotlin', 'xml', 'motion-layout']
+        name: 'LET Reviewer: myLET',
+        url: 'https://play.google.com/store/apps/details?id=com.let.reviewer.myletreviewer',
+        desc: 'Do you have what it takes to pass the Reviewer for Licensure Examination for Teachers?',
+        icon: 'https://play-lh.googleusercontent.com/5Ne5s51jztZAcj9adXFGUjgdymjXlcmwivOG4nBoqWFseE3JysicQnMYLdW8ffdAoJxR=s512-rw',
+        tags: ['kotlin', 'jetpack', 'compose', 'coroutine']
     },
     {
         name: 'LTO Reviewer: 2023',
