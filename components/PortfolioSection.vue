@@ -1,5 +1,6 @@
 <template lang="pug">
 div.min-h-screen
+    portfolio-modal(ref="modal")
     section-header(bg-text="PORTFOLIO") My Work
     ClientOnly
         .flex.justify-center
@@ -7,7 +8,6 @@ div.min-h-screen
                 button(v-for="i in tabs" :key="i" @click="onSelectTab(i)" :class="{'active': activeTab === i}" :id="i").text-xl.mx-2.font-semibold.transition-all {{ i }}
                 .absolute.h-1.rounded-full.w-20.bg-green-500.transition-all(class="-bottom-3").indicator
     button(@click="modal.openModal()") show
-    portfolio-modal(ref="modal")
 </template>
 
 <script setup>
