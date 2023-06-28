@@ -1,5 +1,5 @@
 <template lang="pug">
-.flex.flex-wrap.mt-10
+.flex.flex-wrap.mt-10.justify-center
     .shadow-md.px-4.py-4.rounded-md(v-for="(i, index) in androids" :key="index").border.hover_bg-blue-50.m-2
         a(:href="i.url" target="_blank")
             h1.font-bold.text-xl {{ i.name }}
@@ -31,7 +31,7 @@ const androids = [
         url: 'https://play.google.com/store/apps/details?id=com.filipino.foods',
         desc: 'Looking for a Filipino foods for chicken? Look no more. The newest app for guiding Filipino mom\'s',
         icon: 'https://play-lh.googleusercontent.com/KsW8zHF1XAEN_76mnlpvlXl3-UpQjxonTMD8jihNdLpUTTY0ptG2YOdIv-1p9CczhFQ=w480-h960-rw',
-        tags: ['kotlin', 'xml', 'motion-layout']
+        tags: ['kotlin', 'jetpack-room', 'data-store']
     },
     {
         name: 'DailyCar: Auto maintenance',
