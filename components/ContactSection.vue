@@ -19,7 +19,7 @@ div.min-h-screen
                 h1.font-bold.text-3xl.mb-8 Send Us a Note
                 .flex
                     form(v-on:submit.prevent="onSubmit").grow
-                        .flex.space-x-4
+                        .flex.space-x-0.flex-col.space-y-2.md_flex-row.md_space-x-4.md_space-y-0
                             input(type='text' v-model="name" placeholder="Name" required).grow.border.px-4.py-2.border-slate-800
                             input(type='email' v-model="email" placeholder="Email" required).grow.border.px-4.py-2.border-slate-800
                         textarea(placeholder="Tell us about your needs..." v-model="comment" required).w-full.mt-4.h-44.grow.border.px-4.py-2.border-slate-800
