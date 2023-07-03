@@ -10,11 +10,12 @@ div.min-h-screen
     //- button(@click="modal.openModal()") show
     .max-w-7xl.mx-auto.px-4.text-slate-700
         portfolio-android
+        portfolio-web
 </template>
 
 <script setup>
-const tabs = ref(['All', 'Web', 'Android'])
-const activeTab = ref('All')
+const tabs = ref(['Web', 'Android'])
+const activeTab = ref('Android')
 const modal = ref(null)
 
 const onSelectTab = (tab) => {
@@ -35,7 +36,7 @@ const indicatorStyle = (tab) => {
 
 onMounted(() => {
     nextTick(() => {
-        indicatorStyle('All')
+        indicatorStyle('Android')
     })
 })
 </script>
