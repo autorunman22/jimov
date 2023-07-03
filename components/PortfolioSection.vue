@@ -1,22 +1,20 @@
 <template lang="pug">
 div.min-h-screen
-    portfolio-modal(ref="modal")
     section-header(bg-text="PORTFOLIO") My Work
     ClientOnly
         .flex.justify-center
             .relative.justify-center.text-slate-500.menu-parent
                 button(v-for="i in tabs" :key="i" @click="onSelectTab(i)" :class="{'active': activeTab === i}" :id="i").text-xl.mx-2.font-semibold.transition-all {{ i }}
                 .absolute.h-1.rounded-full.w-20.bg-green-500.transition-all(class="-bottom-3").indicator
-    //- button(@click="modal.openModal()") show
     .max-w-7xl.mx-auto.px-4.text-slate-700
-        portfolio-android
-        portfolio-web
+        Transition
+            portfolio-android(v-if="activeTab === 'Android'")
+            portfolio-web(v-else)
 </template>
 
 <script setup>
 const tabs = ref(['Web', 'Android'])
 const activeTab = ref('Android')
-const modal = ref(null)
 
 const onSelectTab = (tab) => {
     activeTab.value = tab
@@ -40,3 +38,15 @@ onMounted(() => {
     })
 })
 </script>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
