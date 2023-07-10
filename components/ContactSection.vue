@@ -45,7 +45,7 @@ const onSubmit = async () => {
     }
     const receivers = [
         {
-            email: 'ovejera.jimpaulo@gmail.com',
+            email: 'algupit@gmail.com',
         },
     ]
 
@@ -54,7 +54,7 @@ const onSubmit = async () => {
             .sendTransacEmail({
                 sender,
                 to: receivers,
-                subject: 'Jim Ovejera - Portfolio',
+                subject: 'ALG 247 IT Support',
                 htmlContent: comment.value,
                 params: {
                     role: 'Frontend',

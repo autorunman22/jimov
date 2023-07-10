@@ -1,7 +1,7 @@
 <template lang="pug">
 div.min-h-screen
     .h-10
-    section-header(bg-text="ABOUT ME") Know Me More
+    section-header(bg-text="ABOUT ME") Know Us More
     .flex.justify-center.px-4.text-center.space-x-0.flex-col.xl_flex-row.xl_space-x-16.xl_px-36.xl_text-left
         div.tracking-wide.leading-loose.flex-1
             h1.font-bold.text-3xl.text-slate-700 Hello! We're

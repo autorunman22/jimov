@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-    section-header(bg-text="SUMMARY") Resume
+    section-header(bg-text="SUMMARY") Experience
     .max-w-7xl.mx-auto.px-4
         .grid.grid-cols-1.xl_grid-cols-2.gap-12.text-slate-700
             div
