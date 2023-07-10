@@ -4,7 +4,7 @@ div
     .max-w-7xl.mx-auto.px-4
         .grid.grid-cols-1.xl_grid-cols-2.gap-12.text-slate-700
             div
-                h1.font-bold.text-3xl.mb-8 My Experience
+                h1.font-bold.text-3xl.mb-8 Head Developer Experience
                 div
                     .shadow-lg.border.border.rounded-md.px-6.py-6
                         span.bg-green-500.text-white.rounded-full.px-4.py-1 2021 - Present
@@ -33,7 +33,7 @@ div
                                 span.font-semibold.text-lg.hover_text-green-500 Gcash/Mynt
                         p.mt-4 Play a crucial role in developing and enhancing our web applications using Vue.js framework. Collaborate with our team of designers, backend developers, and stakeholders to create responsive and interactive user interfaces that provide an exceptional user experience.
             div
-                h1.font-bold.text-3xl.mb-8 My Skills
+                h1.font-bold.text-3xl.mb-8 Our Skills
                 div
                     .flex.items-center.justify-between
                         span Nuxt.js

@@ -24,7 +24,7 @@ const links = ref([
     { name: 'Home', link: '#home' },
     { name: 'About Us', link: '#about-me' },
     { name: 'What We Do', link: '#what-i-do' },
-    // { name: 'Resume', link: '#resume' },
+    { name: 'Resume', link: '#resume' },
     { name: 'Portfolio', link: '#portfolio' },
     { name: 'Testimonials', link: '#testimonials' },
     { name: 'Contact', link: '#contact' }
