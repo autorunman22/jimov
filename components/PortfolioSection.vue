@@ -1,6 +1,6 @@
 <template lang="pug">
 div.min-h-screen
-    section-header(bg-text="PORTFOLIO") My Work
+    section-header(bg-text="PORTFOLIO") Our Works
     ClientOnly
         .flex.justify-center
             .relative.justify-center.text-slate-500.menu-parent

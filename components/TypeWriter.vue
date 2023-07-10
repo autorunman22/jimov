@@ -8,7 +8,7 @@
 <script setup>
 const typeValue = ref("")
 const typeStatus = ref(false)
-const displayTextArray = ref(["I'm Jim Ovejera.", "I'm a Freelancer.", "I'm a Web Developer.", "I'm an Android Developer."])
+const displayTextArray = ref(["ALG 247 IT SOLUTIONS", "Specializing customize software"])
 const typingSpeed = ref(100)
 const erasingSpeed = ref(100)
 const newTextDelay = ref(2000)

@@ -1,7 +1,7 @@
 <template lang="pug">
 nav.bg-slate-800.text-white.lg_hidden.fixed.w-full.top-0.z-20
     .flex.items-center.justify-between.py-2.px-4
-        h1.font-bold.text-2xl.text-center Jim Ovejera
+        h1.font-bold.text-2xl.text-center ALG 247 IT Solutions
         div
             .flex.items-center.space-x-3
                 NuxtLink(to="https://www.facebook.com/h4ck3r22b")
@@ -21,8 +21,8 @@ const isOpen = ref(false)
 
 const links = ref([
     { name: 'Home', link: '#home' },
-    { name: 'About Me', link: '#about-me' },
-    { name: 'What I Do', link: '#what-i-do' },
+    { name: 'About Us', link: '#about-me' },
+    { name: 'What We Do', link: '#what-i-do' },
     { name: 'Resume', link: '#resume' },
     { name: 'Portfolio', link: '#portfolio' },
     { name: 'Testimonials', link: '#testimonials' },
