@@ -17,7 +17,7 @@ div.min-h-screen
                 span.shrink-0 ALG 247 IT Solutions
             .flex.space-x-6.border-b.py-3.border-slate-300
                 span.font-bold Email:
-                span.shrink-0.pr-10 algupit@gmail.com
+                span.shrink-0.pr-10 alg247.itsolution@gmail.com
             .flex.space-x-6.border-b.py-3.border-slate-300
                 span.font-bold Contact:
                 span.shrink-0 +639175145553

@@ -45,7 +45,7 @@ const onSubmit = async () => {
     }
     const receivers = [
         {
-            email: 'algupit@gmail.com',
+            email: 'alg247.itsolution@gmail.com',
         },
     ]
 
