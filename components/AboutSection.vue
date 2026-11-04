@@ -1,45 +1,65 @@
 <template lang="pug">
-div.min-h-screen
-    .h-10
-    section-header(bg-text="ABOUT ME") Know Me More
-    .flex.justify-center.px-4.text-center.space-x-0.flex-col.xl_flex-row.xl_space-x-16.xl_px-36.xl_text-left
-        div.tracking-wide.leading-loose.flex-1
-            h1.font-bold.text-3xl.text-slate-700 Hello! I'm
-                span.mx-2.text-green-500 Jim Ovejera 🖐
-            p.mt-6.text-lg  I am a passionate Web and Android developer. I am specialized in creating dynamic and user-friendly websites and mobile applications. With a keen eye for design and a love for problem-solving, I aim to deliver innovative solutions that meet the unique needs of my clients.
-            br
-            p.text-lg Whether you need a sleek website to showcase your business or a powerful mobile application to engage your users, I am here to turn your ideas into reality. Let's collaborate and create something exceptional together. Feel free to reach out to me through the contact information provided below and let's discuss how I can help you achieve your digital goals.
-            br
-            p.text-lg Thank you for visiting my portfolio, and I look forward to connecting with you!
-        div.text-slate-700.mt-12
-            .flex.space-x-6.border-b.pb-3.border-slate-300
-                span.font-bold Name:
-                span.shrink-0 Jim Ovejera
-            .flex.space-x-6.border-b.py-3.border-slate-300
-                span.font-bold Email:
-                span.shrink-0.pr-10 ovejera.jimpaulo@gmail.com
-            .flex.space-x-6.border-b.py-3.border-slate-300
-                span.font-bold Contact:
-                span.shrink-0 +639204664852
-            .flex.space-x-6.border-b.py-3.border-slate-300
-                span.font-bold Age:
-                span.shrink-0 30 yrs. old
-            .flex.space-x-6.border-b.py-3.border-slate-300
-                span.font-bold From:
-                span.shrink-0 Manila City, Philippines
-            a(:href="`${baseURL}cv.pdf`" target="_blank").block.mt-12.border-2.border-green-500.rounded-full.px-10.py-4.text-white.font-bold.transition-all.hover_bg-green-700.bg-green-500.text-center.shadow-lg Download Resume
-    .flex.items-center.justify-center.mt-20.text-center.text-slate-700
-        div.px-10.bg-red-500s
-            span.font-bold.text-2xl.lg_4xl 10+
-            div.text-md.lg_text-2xl Years Experience
-        div.px-10.border-x
-            span.font-bold.text-2xl.lg_4xl 50+
-            div.text-md.lg_text-2xl Happy Clients
-        div.px-10.bg-red-500s
-            span.font-bold.text-2xl.lg_4xl 200+
-            div.text-md.lg_text-2xl Projects Done
+section(class="section")
+  div(class="container-content")
+    div(class="grid gap-14 lg_grid-cols-12")
+      div(class="lg_col-span-7")
+        section-heading(number="02" title="Know me more")
+        div(class="prose-editorial mt-10 text-base leading-loose text-muted")
+          p.
+            I'm Jim — a web and Android developer based in Manila. For the past decade I've built
+            products for fintech, travel, education and local businesses: fast interfaces, careful
+            details, and code that stays easy to maintain.
+          p.
+            My work spans Nuxt and Vue on the web, Kotlin and Jetpack Compose on Android, and the
+            APIs, data and automation that hold a product together. I care about the space between
+            design and engineering — the part people actually feel.
+          p.
+            Lately I've been leaning on AI-assisted workflows: pairing tools like Copilot and Claude
+            with careful review, so ideas turn into working software faster without handing off
+            judgement.
+      div(class="lg_col-span-5")
+        dl(class="border-t border-line")
+          div(
+            class="flex items-baseline justify-between gap-6 border-b border-line py-4"
+            v-for="row in details"
+            :key="row.label"
+          )
+            dt(class="text-[11px] uppercase tracking-label text-muted") {{ row.label }}
+            dd(class="text-right text-sm text-ink")
+              a(class="link-quiet" v-if="row.href" :href="row.href") {{ row.value }}
+              span(v-else) {{ row.value }}
+        a(class="btn btn-ghost mt-8" :href="useAsset('cv.pdf')" target="_blank" rel="noopener")
+          | Download resume
+          svg(class="h-3 w-3" aria-hidden="true" viewBox="0 0 12 12" fill="none")
+            path(d="M6 2v7M3 6.5 6 9.5l3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="square")
+    dl(class="mt-20 grid grid-cols-1 border border-line sm_grid-cols-3")
+      div(
+        class="p-8"
+        v-for="(stat, index) in stats"
+        :key="stat.label"
+        :class="index > 0 ? 'border-t sm_border-t-0 sm_border-l' : ''"
+      )
+        dt(class="text-[11px] uppercase tracking-label text-muted") {{ stat.label }}
+        dd(class="mt-2 font-serif text-4xl tabular") {{ stat.value }}
 </template>
 
 <script setup>
-const baseURL = useRuntimeConfig().app.baseURL
+const details = [
+  { label: 'Name', value: 'Jim Ovejera' },
+  {
+    label: 'Email',
+    value: 'ovejera.jimpaulo@gmail.com',
+    href: 'mailto:ovejera.jimpaulo@gmail.com',
+  },
+  { label: 'Phone', value: '+63 920 466 4852', href: 'tel:+639204664852' },
+  { label: 'Based in', value: 'Manila, Philippines' },
+  { label: 'Experience', value: '10+ years' },
+  { label: 'Focus', value: 'Web & Android' },
+]
+
+const stats = [
+  { label: 'Years experience', value: '10+' },
+  { label: 'Projects shipped', value: '200+' },
+  { label: 'Clients served', value: '50+' },
+]
 </script>

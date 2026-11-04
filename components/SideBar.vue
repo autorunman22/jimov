@@ -1,60 +1,53 @@
 <template lang="pug">
-nav.sidebar.w-64.fixed.min-h-screen.bg-slate-800.hidden.lg_block
-    .flex.flex-col.items-center.min-h-screen.space-y-2.justify-between
-        div
-            img(src='/avatar.jpeg' class="w-36").h-36.object-contain.rounded-full.border-4.mt-10.border-green-500
-            h1.mt-2.text-white.font-bold.text-3xl.text-center Jim Ovejera
-        div.grow
-            ul.text-white.mt-28.text-center
-                li(v-for="i in links" :key="i.name" :class="{'text-green-500': activeSection === i.link}").mt-5
-                    a(:href="i.link" @click.prevent.stop="onNav(i.link)").text-lg.hover_text-green-500.transition {{ i.name }}
-        .pb-6
-            .flex.items-center.space-x-3
-                NuxtLink(to="https://www.facebook.com/h4ck3r22b")
-                    img(src="/fb.png").w-6.h-6
-                NuxtLink(to="https://play.google.com/store/apps/dev?id=5623979583961178976")
-                    img(src="/google-play.svg").w-6.h-6
+aside(class="on-ink fixed inset-y-0 left-0 z-40 hidden w-[280px] flex-col bg-ink text-paper xl_flex")
+  div(class="border-b border-white/10 px-8 py-9")
+    div(class="flex items-center justify-between")
+      p(class="font-serif text-2xl leading-none") Jim Ovejera
+      span(class="flex h-9 w-9 items-center justify-center border border-white/25 font-serif text-xs") JO
+    p(class="mt-2 text-[11px] uppercase tracking-label text-[#A8A29A]") Web & Android Developer
+    img(
+      class="mt-8 h-28 w-28 rounded-full border border-white/15 object-cover"
+      :src="useAsset('avatar.webp')"
+      :srcset="`${useAsset('avatar.webp')} 1x, ${useAsset('avatar-2x.webp')} 2x`"
+      sizes="112px"
+      alt="Portrait of Jim Ovejera"
+      width="224"
+      height="224"
+      loading="eager"
+    )
+  nav(class="flex-1 overflow-y-auto px-8 py-8" aria-label="Section navigation")
+    ul(class="space-y-1")
+      li(v-for="(link, index) in links" :key="link.id")
+        a(
+          class="group flex items-center gap-4 py-2"
+          :href="`#${link.id}`"
+          :aria-current="active === `#${link.id}` ? 'location' : undefined"
+          @click.prevent="go(link.id)"
+        )
+          span(class="text-[10px] tabular text-white/55") {{ String(index + 1).padStart(2, '0') }}
+          span(
+            class="text-sm transition-colors group-hover_text-paper"
+            :class="active === `#${link.id}` ? 'text-paper' : 'text-[#A8A29A]'"
+          ) {{ link.label }}
+          span(
+            class="ml-auto h-1.5 w-1.5 rounded-full bg-pine transition-opacity"
+            :class="active === `#${link.id}` ? 'opacity-100' : 'opacity-0'"
+            aria-hidden="true"
+          )
+  div(class="border-t border-white/10 px-8 py-7")
+    availability-badge(tone="dark")
+    social-links(class="mt-5")
 </template>
 
 <script setup>
-const activeSection = ref("#home")
+const links = [
+  { id: 'home', label: 'Home' },
+  { id: 'about-me', label: 'About' },
+  { id: 'what-i-do', label: 'Services' },
+  { id: 'resume', label: 'Experience' },
+  { id: 'portfolio', label: 'Work' },
+  { id: 'contact', label: 'Contact' },
+]
 
-const links = ref([
-    { name: 'Home', link: '#home' },
-    { name: 'About Me', link: '#about-me' },
-    { name: 'What I Do', link: '#what-i-do' },
-    { name: 'Resume', link: '#resume' },
-    { name: 'Portfolio', link: '#portfolio' },
-    { name: 'Testimonials', link: '#testimonials' },
-    { name: 'Contact', link: '#contact' }
-])
-
-const onNav = (page) => {
-    activeSection.value = page
-
-    document.querySelector(page).scrollIntoView({
-        behavior: 'smooth'
-    })
-}
-
-var observer = null
-
-onMounted(() => {
-    observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry) => {
-            const { target, isIntersecting } = entry
-
-            if (isIntersecting) {
-                activeSection.value = `#${target.id}`
-            }
-        })
-    }, { threshold: 0.5 });
-
-    const sections = document.querySelectorAll(links.value.map(e => e.link))
-    sections.forEach((s) => observer.observe(s))
-})
-
-onBeforeUnmount(() => {
-    observer.disconnect()
-})
+const { active, go } = useActiveSection(links.map((link) => link.id))
 </script>

@@ -6,19 +6,17 @@ export default defineNuxtConfig({
 	app: {
 		baseURL: "/jimov/",
 	},
-	modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "nuxt-headlessui"],
+	modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
 	css: ["~/assets/css/main.css"],
 	googleFonts: {
 		families: {
-			Inter: [300, 400, 700],
+			Inter: [300, 400, 500, 600],
+			"Instrument Serif": [400],
 		},
+		display: "swap",
+		download: true,
 		prefetch: true,
 		preconnect: true,
 		preload: true,
-	},
-	runtimeConfig: {
-		public: {
-			smtpKey: process.env.SENDINBLUE_KEY,
-		},
 	},
 })

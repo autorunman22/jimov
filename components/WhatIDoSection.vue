@@ -1,29 +1,40 @@
 <template lang="pug">
-div.min-h-screen.bg-gray-50.mt-10
-    section-header(bg-text="SERVICES").z-10 What I Do?
-    .grid.grid-cols-1.xl_grid-cols-2.gap-12.text-center.px-4.lg_px-36.text-slate-700.text-justify
-        div
-            .flex.space-x-6
-                img(src='/what-i-do/web-dev.png').w-20.h-20
-                div
-                    h1.text-2xl.font-bold.mb-2.text-green-500 Web Development
-                    p.leading-7 Responsive websites that adapt to any device. I create modern, functional, and visually appealing websites using up-to-date knowledge and best practices.
-        div
-            .flex.space-x-6
-                img(src='/what-i-do/android.png').w-20.h-20
-                div
-                    h1.text-2xl.font-bold.mb-2.text-green-500 Android Development
-                    p.leading-7 Expertly crafted Android apps for seamless user experiences on all devices. From sleek consumer apps to robust enterprise solutions, I've got you covered.
-        div
-            .flex.space-x-6
-                img(src='/what-i-do/social-media.png').w-20.h-20
-                div
-                    h1.text-2xl.font-bold.mb-2.text-green-500 Meta Ads
-                    p.leading-7 Ready to take your business to new heights through targeted advertising on Facebook? Look no further! I specialize in Facebook Ads marketing and can help you reach your target audience effectively.
-        div
-            .flex.space-x-6
-                img(src='/what-i-do/web-design.png').w-20.h-20
-                div
-                    h1.text-2xl.font-bold.mb-2.text-green-500 Web Design
-                    p.leading-7 With a keen eye for aesthetics and a focus on user experience, I create beautiful and intuitive websites that leave a lasting impression. Whether you need a simple portfolio site or a complex multi-page website, I am here to bring your vision to life.
+section(class="section")
+  div(class="container-content")
+    section-heading(
+      number="03"
+      title="What I do"
+      lede="Four disciplines, one way of working: understand the problem, design the smallest useful thing, then build it so it lasts."
+    )
+    ul(class="mt-14 border-t border-line")
+      li(class="group border-b border-line" v-for="(service, index) in services" :key="service.title")
+        div(class="grid gap-4 py-8 md_grid-cols-12 md_items-baseline md_gap-6")
+          span(class="text-[11px] tabular text-pine md_col-span-1") {{ String(index + 1).padStart(2, '0') }}
+          h3(class="font-serif text-2xl md_col-span-4 lg_text-3xl") {{ service.title }}
+          p(class="text-sm leading-relaxed text-muted md_col-span-7") {{ service.desc }}
 </template>
+
+<script setup>
+const services = [
+  {
+    title: 'Web Development',
+    desc: 'Nuxt and Vue interfaces that stay fast as they grow — responsive, accessible, and built on solid engineering rather than shortcuts.',
+  },
+  {
+    title: 'Android Development',
+    desc: 'Kotlin and Jetpack Compose apps for consumer and enterprise use, from first prototype through Play Store release and maintenance.',
+  },
+  {
+    title: 'Web Design',
+    desc: 'Content-first layouts with a clear hierarchy, designed in the browser as much as in the mockup so the shipped site keeps its intent.',
+  },
+  {
+    title: 'Meta Ads',
+    desc: 'Targeted Facebook campaigns, landing pages and measurement for small businesses that need qualified leads, not vanity reach.',
+  },
+  {
+    title: 'AI-assisted Development',
+    desc: 'Copilot, Claude and automation tools used as leverage for scaffolding, refactors and repetitive work — with human review at every step.',
+  },
+]
+</script>

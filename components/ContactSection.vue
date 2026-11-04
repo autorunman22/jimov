@@ -1,71 +1,116 @@
 <template lang="pug">
-div.min-h-screen
-    section-header(bg-text="CONTACT") Get in Touch
-    .max-w-7xl.mx-auto.px-4.text-slate-700
-        .flex.px-4.space-x-0.flex-col.lg_flex-row.space-y-8.lg_space-x-8.lg_space-y-0
+section(class="section")
+  div(class="container-content")
+    section-heading(
+      number="06"
+      title="Let's talk"
+      lede="Have a product in mind, or a project that needs a careful pair of hands? I reply within a day."
+    )
+    div(class="mt-14 grid gap-16 lg_grid-cols-12")
+      div(class="lg_col-span-5")
+        div(class="space-y-8")
+          div
+            p(class="text-[11px] uppercase tracking-label text-muted") Email
+            a(
+              class="mt-2 block break-words font-serif text-xl link-quiet sm_text-2xl"
+              :href="`mailto:${email}`"
+            ) {{ email }}
+          div
+            p(class="text-[11px] uppercase tracking-label text-muted") Phone
+            a(class="mt-2 block text-base link-quiet" :href="phoneHref") {{ phone }}
+          div
+            p(class="text-[11px] uppercase tracking-label text-muted") Location
+            p(class="mt-2 text-base text-ink") San Lazaro St. Sta. Cruz, Manila
+        div(class="mt-10")
+          availability-badge
+          p(class="mt-2 text-xs text-muted") Manila (GMT+8) · replies within 24h
+        social-links(class="mt-6")
+      div(class="lg_col-span-7")
+        form(@submit.prevent="onSubmit" novalidate)
+          div(class="grid gap-5 sm_grid-cols-2")
             div
-                h1.font-bold.text-3xl.mb-8 My Info
-                div.text-slate-700.mt-8
-                    .flex.space-x-6.border-b.py-3.border-slate-300
-                        span.font-bold Email:
-                        span.shrink-0.pr-10 ovejera.jimpaulo@gmail.com
-                    .flex.space-x-6.border-b.py-3.border-slate-300
-                        span.font-bold Contact:
-                        span.shrink-0 +639204664852
-                    .flex.space-x-6.border-b.py-3.border-slate-300
-                        span.font-bold Address:
-                        span.shrink-0 San Lazaro St. Sta. Cruz, Manila
-            div.grow
-                h1.font-bold.text-3xl.mb-8 Send Us a Note
-                .flex
-                    form(v-on:submit.prevent="onSubmit").grow
-                        .flex.space-x-0.flex-col.space-y-2.md_flex-row.md_space-x-4.md_space-y-0
-                            input(type='text' v-model="name" placeholder="Name" required).grow.border.px-4.py-2.border-slate-800
-                            input(type='email' v-model="email" placeholder="Email" required).grow.border.px-4.py-2.border-slate-800
-                        textarea(placeholder="Tell us about your needs..." v-model="comment" required).w-full.mt-4.h-44.grow.border.px-4.py-2.border-slate-800
-                        button.block.mt-12.border-2.border-green-500.rounded-full.px-10.py-4.text-white.font-bold.transition-all.hover_bg-green-700.bg-green-500.text-center.shadow-l.mx-auto Send Message
+              label(class="block text-[11px] uppercase tracking-label text-muted" for="name") Name
+              input#name(
+                class="field mt-2"
+                v-model="form.name"
+                type="text"
+                autocomplete="name"
+                placeholder="Your name"
+                :aria-invalid="errors.name ? 'true' : undefined"
+                :aria-describedby="errors.name ? 'name-error' : undefined"
+                @input="errors.name = ''"
+              )
+              p#name-error(class="mt-2 text-xs text-[#A33A2B]" v-if="errors.name") {{ errors.name }}
+            div
+              label(class="block text-[11px] uppercase tracking-label text-muted" for="email") Email
+              input#email(
+                class="field mt-2"
+                v-model="form.email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                :aria-invalid="errors.email ? 'true' : undefined"
+                :aria-describedby="errors.email ? 'email-error' : undefined"
+                @input="errors.email = ''"
+              )
+              p#email-error(class="mt-2 text-xs text-[#A33A2B]" v-if="errors.email") {{ errors.email }}
+          div(class="mt-5")
+            label(class="block text-[11px] uppercase tracking-label text-muted" for="message") Message
+            textarea#message(
+              class="field mt-2 h-40"
+              v-model="form.message"
+              placeholder="What are you building, and what would a good outcome look like?"
+              :aria-invalid="errors.message ? 'true' : undefined"
+              :aria-describedby="errors.message ? 'message-error' : undefined"
+              @input="errors.message = ''"
+            )
+            p#message-error(class="mt-2 text-xs text-[#A33A2B]" v-if="errors.message") {{ errors.message }}
+          div(class="mt-6 flex flex-wrap items-center gap-4")
+            button(class="btn btn-primary" type="submit") Send message
+            p(class="text-xs text-muted") Opens your email client with the message ready to send.
+          p(class="mt-4 text-sm text-pine" v-if="sent" role="status")
+            | Your email app should be open — send the message when you're ready.
 </template>
 
 <script setup>
-import Sib from "sib-api-v3-sdk"
-const email = ref('')
-const name = ref('')
-const comment = ref('')
+const email = 'ovejera.jimpaulo@gmail.com'
+const phone = '+63 920 466 4852'
+const phoneHref = 'tel:+639204664852'
 
-const smtpApiKey = useRuntimeConfig().public.smtpKey
-const client = Sib.ApiClient.instance
-const apiKey = client.authentications['api-key']
-apiKey.apiKey = smtpApiKey
+const form = reactive({ name: '', email: '', message: '' })
+const errors = reactive({ name: '', email: '', message: '' })
+const sent = ref(false)
 
-const onSubmit = async () => {
-    const tranEmailApi = new Sib.TransactionalEmailsApi()
-    const sender = {
-        email: email.value,
-        name: name.value,
-    }
-    const receivers = [
-        {
-            email: 'ovejera.jimpaulo@gmail.com',
-        },
-    ]
+const validate = () => {
+  errors.name = form.name.trim() ? '' : 'Please add your name.'
+  errors.email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())
+    ? ''
+    : 'Please add a valid email address.'
+  errors.message =
+    form.message.trim().length >= 10
+      ? ''
+      : 'A sentence or two about the project helps — at least 10 characters.'
 
-    try {
-        await tranEmailApi
-            .sendTransacEmail({
-                sender,
-                to: receivers,
-                subject: 'Jim Ovejera - Portfolio',
-                htmlContent: comment.value,
-                params: {
-                    role: 'Frontend',
-                },
-            })
-        alert('You have successfully sent this message to him. Thank you.')
-        email.value = ''
-        name.value = ''
-        comment.value = ''
-    } catch (e) {
-        alert('Something went wrong')
-    }
+  return !errors.name && !errors.email && !errors.message
+}
+
+const onSubmit = () => {
+  sent.value = false
+
+  if (!validate()) {
+    requestAnimationFrame(() => {
+      const firstInvalid = document.querySelector('[aria-invalid="true"]')
+      if (firstInvalid instanceof HTMLElement) firstInvalid.focus()
+    })
+    return
+  }
+
+  const subject = encodeURIComponent(`Portfolio enquiry — ${form.name.trim()}`)
+  const body = encodeURIComponent(
+    `${form.message.trim()}\n\n— ${form.name.trim()}\n${form.email.trim()}`
+  )
+
+  window.location.href = `mailto:${email}?subject=${subject}&body=${body}`
+  sent.value = true
 }
 </script>
