@@ -28,7 +28,13 @@ section(class="relative flex min-h-[88svh] flex-col overflow-hidden lg_min-h-[10
             | Selected work
             svg(class="h-3 w-3" aria-hidden="true" viewBox="0 0 12 12" fill="none")
               path(d="M3.2 8.8 8.8 3.2M8.8 3.2H4.3M8.8 3.2v4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="square")
-          a(class="btn btn-ghost" :href="useAsset('cv.pdf')" target="_blank" rel="noopener")
+          a(
+            v-if="cvVisible"
+            class="btn btn-ghost"
+            :href="useAsset('cv.pdf')"
+            target="_blank"
+            rel="noopener"
+          )
             | Download CV
             svg(class="h-3 w-3" aria-hidden="true" viewBox="0 0 12 12" fill="none")
               path(d="M6 2v7M3 6.5 6 9.5l3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="square")
@@ -62,3 +68,9 @@ section(class="relative flex min-h-[88svh] flex-col overflow-hidden lg_min-h-[10
           path(d="M6 2v7M3 6.5 6 9.5l3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="square")
       p(class="text-[11px] uppercase tracking-label text-muted") Manila, Philippines
 </template>
+
+<script setup>
+import { siteConfig } from '~/config/site'
+
+const cvVisible = siteConfig.cv.visible
+</script>

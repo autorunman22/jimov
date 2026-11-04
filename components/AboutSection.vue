@@ -28,7 +28,13 @@ section(class="section")
             dd(class="text-right text-sm text-ink")
               a(class="link-quiet" v-if="row.href" :href="row.href") {{ row.value }}
               span(v-else) {{ row.value }}
-        a(class="btn btn-ghost mt-8" :href="useAsset('cv.pdf')" target="_blank" rel="noopener")
+        a(
+          v-if="cvVisible"
+          class="btn btn-ghost mt-8"
+          :href="useAsset('cv.pdf')"
+          target="_blank"
+          rel="noopener"
+        )
           | Download resume
           svg(class="h-3 w-3" aria-hidden="true" viewBox="0 0 12 12" fill="none")
             path(d="M6 2v7M3 6.5 6 9.5l3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="square")
@@ -44,6 +50,10 @@ section(class="section")
 </template>
 
 <script setup>
+import { siteConfig } from '~/config/site'
+
+const cvVisible = siteConfig.cv.visible
+
 const details = [
   { label: 'Name', value: 'Jim Ovejera' },
   {

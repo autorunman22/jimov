@@ -46,13 +46,23 @@ section(class="section")
           p(class="mt-3 text-sm leading-relaxed text-muted")
             | Copilot, Claude and automation (n8n, Make, Zapier) for scaffolding, refactors and
             | repeatable tasks — always reviewed before it ships.
-        a(class="btn btn-primary mt-8" :href="useAsset('cv.pdf')" target="_blank" rel="noopener")
+        a(
+          v-if="cvVisible"
+          class="btn btn-primary mt-8"
+          :href="useAsset('cv.pdf')"
+          target="_blank"
+          rel="noopener"
+        )
           | Download CV
           svg(class="h-3 w-3" aria-hidden="true" viewBox="0 0 12 12" fill="none")
             path(d="M6 2v7M3 6.5 6 9.5l3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="square")
 </template>
 
 <script setup>
+import { siteConfig } from '~/config/site'
+
+const cvVisible = siteConfig.cv.visible
+
 const jobs = [
   {
     period: '2021 — Present',
