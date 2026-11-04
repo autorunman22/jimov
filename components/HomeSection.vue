@@ -1,5 +1,5 @@
 <template lang="pug">
-.flex.flex-col.min-h-screen(style="background-image: url('/background.webp'); background-size: cover;")
+.flex.flex-col.min-h-screen(:style="{ backgroundImage: `url('${baseURL}background.webp')`, backgroundSize: 'cover' }")
     .flex.grow.flex-col.justify-center.items-center.text-white.text-center.px-4
         p.text-3xl.mb-6.font-medium Welcome
         div: type-writer
@@ -10,6 +10,8 @@
 </template>
 
 <script setup>
+const baseURL = useRuntimeConfig().app.baseURL
+
 const onHire = () => {
     document.querySelector('#contact').scrollIntoView({
         behavior: 'smooth'

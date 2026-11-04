@@ -27,7 +27,7 @@ div.min-h-screen
             .flex.space-x-6.border-b.py-3.border-slate-300
                 span.font-bold From:
                 span.shrink-0 Manila City, Philippines
-            a(href="/cv.pdf" target="_blank").block.mt-12.border-2.border-green-500.rounded-full.px-10.py-4.text-white.font-bold.transition-all.hover_bg-green-700.bg-green-500.text-center.shadow-lg Download Resume
+            a(:href="`${baseURL}cv.pdf`" target="_blank").block.mt-12.border-2.border-green-500.rounded-full.px-10.py-4.text-white.font-bold.transition-all.hover_bg-green-700.bg-green-500.text-center.shadow-lg Download Resume
     .flex.items-center.justify-center.mt-20.text-center.text-slate-700
         div.px-10.bg-red-500s
             span.font-bold.text-2xl.lg_4xl 10+
@@ -39,3 +39,7 @@ div.min-h-screen
             span.font-bold.text-2xl.lg_4xl 200+
             div.text-md.lg_text-2xl Projects Done
 </template>
+
+<script setup>
+const baseURL = useRuntimeConfig().app.baseURL
+</script>
